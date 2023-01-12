@@ -33,7 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </div>
 <!-- Header -->
 <header class="display-container content" style="max-width:1500px;">
-  <img class="image" src="imagini/hotel.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
+  <img class="image" src="imagini\hotel.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
   <div class="display-left padding col l6 m8">
     <div class="container black">
       <h2><i class="fa fa-bed margin-right"></i>Hotel Silver Mountain</h2>
@@ -60,7 +60,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
           <input class="input border" type="number" value="0" name="Kids" min="0" max="6">
           </div>
         </div>
-        <button class="button dark-grey" type="submit"><i class="fa fa-search margin-right"></i> Search availability</button>
+        <a href="login.php" class=" button right dark-grey mobile border">Search</a>
       </form>
     </div>
   </div>
@@ -85,7 +85,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         <p>Single bed</p>
         <p>15m<sup>2</sup></p>
         <p class="large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
-        <button class="button block black margin-bottom">Choose Room</button>
+        <a href="login.php" class="button block black margin-bottom">Choose Room</a>
       </div>
     </div>
     <div class="third margin-bottom">
@@ -96,7 +96,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         <p>Queen-size bed</p>
         <p>25m<sup>2</sup></p>
         <p class="large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p></p>
-        <button class="button block black margin-bottom">Choose Room</button>
+        <a href="login.php" class="button block black margin-bottom">Choose Room</a>
       </div>
     </div>
     <div class="third margin-bottom">
@@ -107,7 +107,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         <p>King-size bed</p>
         <p>40m<sup>2</sup></p>
         <p class="large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
-        <button class="button block black margin-bottom">Choose Room</button>
+        <a href="login.php" class="button block black margin-bottom">Choose Room</a>
       </div>
     </div>
   </div>
