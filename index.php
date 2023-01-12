@@ -208,6 +208,6 @@ try {
 } catch (Exception $e) {
 	echo "Message could not be sent. Mailer Error: {$email->ErrorInfo}";
 }
-  echo "ajuns aici";
+  echo "ajuns";
 }
 ?>
