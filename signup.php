@@ -63,10 +63,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST["Gender"];
 
 
-    $host = '127.0.0.1';
-    $db   = 'hotel';
-    $user = 'inserare';
-    $pass = 'GeorgeTe2002';
+    $host = 'eu-cdbr-west-03.cleardb.net';
+    $db   = 'heroku_b5a80f7ef7b4f17';
+    $user = 'b6449399c3ec1b';
+    $pass = '082465fc';
     $charset = 'utf8mb4';
     $port = "3306";
 

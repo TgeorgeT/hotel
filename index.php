@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Silver Mountain</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
@@ -11,6 +11,14 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </style>
+<script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
+
+<script src ="https://www.google.com/recaptcha/api.js"></script>
+<!-- <script>
+    function onSubmit(token){
+      document.getElementbById("contact").submit();
+    }
+</script> -->
 </head>
 <body class="light-grey">
 
@@ -25,7 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </div>
 <!-- Header -->
 <header class="display-container content" style="max-width:1500px;">
-  <img class="image" src="imagini\hotel.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
+  <img class="image" src="imagini/hotel.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
   <div class="display-left padding col l6 m8">
     <div class="container black">
       <h2><i class="fa fa-bed margin-right"></i>Hotel Silver Mountain</h2>
@@ -122,7 +130,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     <h6><i class="fa fa-info deep-orange padding margin-right"></i> On demand, we can offer playstation, babycall, children care, dog equipment, etc.</h6>
   </div>
  
-
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfTHukjAAAAABkAoJtm4bKgK9tfncWILLxDTimP"></script>
+<script>
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LfTHukjAAAAABkAoJtm4bKgK9tfncWILLxDTimP', {action: 'submit'}).then(function(token) {
+       
+    });
+});
+</script>
+   
   <div class="container" id="contact">
     <h2>Contact</h2>
     <p>If you have any questions, do not hesitate to ask them.</p>
@@ -132,7 +148,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     <form method="post" action="">
       <p><input class="input padding-16 border" type="text" placeholder="Name"  name="Name"></p>
       <p><input class="input padding-16 border" type="text" placeholder="Message"  name="Message"></p>
-      <p><button class="button black padding-large" type="submit">SEND EMAIL</button></p>
+      <span id="captcha" style="color:red" ></span>
+      <div class="g-recaptcha" data-sitekey="6LfTHukjAAAAABkAoJtm4bKgK9tfncWILLxDTimP"></div>
+      <p><button id="contact" class="button black padding-large">SEND EMAIL</button></p>
     </form>
   </div>
 
@@ -174,6 +192,8 @@ function myMap() {
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7Q-uFgdKQf5MDxiP3Z76iFw1QHEPohbM&callback=myMap"></script>
 
+
+
 </body>
 </html>
 
@@ -181,12 +201,23 @@ function myMap() {
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 /* Exception class. */
-require 'vendor\autoload.php';
+require './vendor/autoload.php';
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
 
+
+$recaptcha_url = "https://www.google.com/recaptcha/api/siteverify";
+$recaptcha_secret = "6LfTHukjAAAAAIKW_WgvHvLCEdxrP3jO8kQVJmTW";
+$recaptcha_response = $_POST["g-recaptcha-response"];
+
+$recaptcha = file_get_contents($recaptcha_url. '?secret='.$recaptcha_secret.'&response='.$recaptcha_response);
+$recaptcha = json_decode($recaptcha, true);
+
+if($recaptcha['success']==1){
+
 $name = $_POST["Name"];
 $message = $_POST["Message"];
+
 
 $email = new PHPMailer(TRUE);
 
@@ -208,6 +239,11 @@ try {
 } catch (Exception $e) {
 	echo "Message could not be sent. Mailer Error: {$email->ErrorInfo}";
 }
-  echo "ajuns";
+}
+else{
+  ?>
+  <script>alert("Please fill recaptcha!")</script>;
+  <?php
+}
 }
 ?>

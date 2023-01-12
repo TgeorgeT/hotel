@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>W3.CSS Template</title>
+    <title>Silver Mountain</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -50,10 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST["Password"];
 
 
-    $host = '127.0.0.1';
-    $db   = 'hotel';
-    $user = 'select';
-    $pass = 'GeorgeTe2002';
+    $host = 'eu-cdbr-west-03.cleardb.net';
+    $db   = 'heroku_b5a80f7ef7b4f17';
+    $user = 'b6449399c3ec1b';
+    $pass = '082465fc';
     $charset = 'utf8mb4';
     $port = "3306";
 
@@ -61,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo = new PDO($dsn, $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
     } catch (PDOException $e) {
         echo "eroare la conexiune";
     };
