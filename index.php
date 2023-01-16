@@ -198,6 +198,7 @@ function myMap() {
 </html>
 
 <?php
+echo $_SERVER["REMOTE_ADDR"];
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 /* Exception class. */
