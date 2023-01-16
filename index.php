@@ -198,7 +198,10 @@ function myMap() {
 </html>
 
 <?php
+
 echo $_SERVER["REMOTE_ADDR"];
+echo $_SERVER["HTTP_CLIENT_IP"];
+echo $_SERVER["HTTP_X_REAL_IP"];
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 /* Exception class. */
