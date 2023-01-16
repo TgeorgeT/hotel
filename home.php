@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-echo $_SERVER['remote_addr'];
+echo $_SERVER['REMOTE_ADDR'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
